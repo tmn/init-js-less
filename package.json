@@ -5,11 +5,11 @@
   "main": "js/app.js",
   "scripts": {
     "watch-css": "nodemon -I -w less/ --ext less --exec 'npm run build-css'",
-    "watch-js": "watchify js/app.js -o 'browserify js/app.js > static/bundle.js' -v",
+    "watch-js": "watchify js/app.js -o static/bundle.js -v",
     "watch": "npm run watch-css & npm run watch-js",
     "postprocess-css": "autoprefixer static/bundle.css",
     "build-css": "lessc less/core.less static/bundle.css && npm run postprocess-css; true",
-    "build-js": "browserify js/app.js > static/bundle.js",
+    "build-js": "browserify js/app.js -o static/bundle.js",
     "build": "npm run build-css & npm run build-js",
     "jshint": "jshint --reporter node_modules/jshint-stylish/stylish.js js/; true",
     "test": "npm run jshint && mocha test"
