@@ -4,13 +4,16 @@
   "description": "",
   "main": "js/app.js",
   "scripts": {
-    "watch-css": "nodemon -I -w less/ --ext less --exec 'npm run build-css'",
-    "watch-js": "watchify js/app.js -o static/bundle.js -v",
-    "watch": "npm run watch-css & npm run watch-js",
-    "postprocess-css": "autoprefixer static/bundle.css",
-    "build-css": "lessc less/core.less static/bundle.css && npm run postprocess-css; true",
-    "build-js": "browserify js/app.js -o static/bundle.js",
-    "build": "npm run build-css & npm run build-js",
+    "build": "npm run build:css & npm run build:js",
+    "build:css": "lessc less/core.less static/bundle.css && npm run preprocess:autoprefixer; true",
+    "build:js": "browserify js/app.js -o static/bundle.js",
+
+    "watch": "npm run watch:css & npm run watch:js",
+    "watch:css": "nodemon -I -w less/ --ext less --exec 'npm run build:css'",
+    "watch:js": "watchify js/app.js -o static/bundle.js -v",
+
+    "preprocess:autoprefixer": "autoprefixer static/bundle.css",
+
     "jshint": "jshint --reporter node_modules/jshint-stylish/stylish.js js/; true",
     "test": "mocha test",
     "qa": "npm run jshint && npm test"
