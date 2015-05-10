@@ -12,7 +12,8 @@
     "build-js": "browserify js/app.js -o static/bundle.js",
     "build": "npm run build-css & npm run build-js",
     "jshint": "jshint --reporter node_modules/jshint-stylish/stylish.js js/; true",
-    "test": "npm run jshint && mocha test"
+    "test": "mocha test",
+    "qa": "npm run jshint && npm test"
   },
   "author": {
     "name": "Tri Nguyen",
