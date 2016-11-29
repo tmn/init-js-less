@@ -2,15 +2,11 @@ Just another skeleton to start a simple js/less project
 
 # Getting started
 
-Clone the project and start hackin' 
+Clone the project and start hackin'
 
     git clone https://github.com/tmn/init-js-less.git
     cd init-js-less
     npm install
-
-Watching and building new changes using
-
-    npm run watch
 
 ## Other commands
 
@@ -52,15 +48,6 @@ Run jshint
     npm run jshint
 
 Run both using `npm run qa`
-
-
-
-### Others
-
-Run autoprefixer (included in CSS build and watch)
-
-    npm run preprocess:autoprefixer
-
 
 
 
